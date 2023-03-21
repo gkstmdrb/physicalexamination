@@ -2,34 +2,9 @@
 
 # 평균 키의 값과 시력 분포를 구하는 알고리즘
 <br><br>
-### 인원 수
+### JAVA 코드
 ------------------
-![image](https://user-images.githubusercontent.com/114748816/225799264-55731919-1627-4dbd-96df-dfa0df12b044.png)  <br><br>
-상수를 정의하는 방법 중 하나인 static final을 사용하여 VMAX라는 이름의 정수형 상수를 선언하고 초기값으로 21을 할당한 것이다.
-<br><br><br><br><br>
-
-### 클래스 생성자
-------------------
-![image](https://user-images.githubusercontent.com/114748816/225799980-7462c28a-f0c8-491b-8757-40a7ea0a54eb.png) <br><br>
-PhyscData 클래스의 생성자는 String name, int height, double vision 이라는 3개의 매개변수를 가지며, <br><br>
-이를 통해 객체가 생성될 때 해당 객체의 name, height, vision 멤버 변수에 값을 할당한다. <br><br><br><br><br>
-
-### 키 평균
-------------------
-![image](https://user-images.githubusercontent.com/114748816/225800613-d287e1b3-e9c8-474b-884d-4516d41bafd5.png) <br><br>
-sum의 값을 0으로 초기화 하고,<br><br>
-i의 값이 dat 배열의 길이 보다 작다면 i값을 증가시켜,<br>
-i의 값이 배열의 길이와 같을때까지 실행시켜 준다. <br><br>
-sum 값에 현재 dat 배열에 있는 키의 값을 더해 누적시켜 준다. <br><br>
-누적된 sum값 ÷ dat 배열의 길이)의 값을 main 매서드로 보내준다. <br><br><br><br><br>
-
-### 시력 분포
-![image](https://user-images.githubusercontent.com/114748816/225802488-b7702313-90ee-4d9f-87a8-c6e1bdd31f4f.png) <br><br>
-여기서 VMAX는 최대 시력 값이며, 시력은 0.0부터 VMAX까지의 값으로 표현한다. <br><br>
-시력 값을 0.1 단위로 나누어서 각 범위에 해당하는 인덱스를 구하고, <br><br>
-해당 인덱스에 대응하는 배열 요소(dist[])의 값을 1씩 증가시킨다.
-
-
+``` java
 	static final int VMAX = 21;
 	
 	static class PhyscData {
@@ -92,3 +67,40 @@ sum 값에 현재 dat 배열에 있는 키의 값을 더해 누적시켜 준다.
 			System.out.printf("%3.1f ~ : %2d명\n", i / 10.0, vdist[i]);
 	
 }
+```
+<br><br><br><br><br>
+### 인원 수
+------------------
+![image](https://user-images.githubusercontent.com/114748816/225799264-55731919-1627-4dbd-96df-dfa0df12b044.png)  <br><br>
+상수를 정의하는 방법 중 하나인 static final을 사용하여 VMAX라는 이름의 정수형 상수를 선언하고 초기값으로 21을 할당한 것이다.
+<br><br><br><br><br>
+
+### 클래스 생성자
+------------------
+![image](https://user-images.githubusercontent.com/114748816/225799980-7462c28a-f0c8-491b-8757-40a7ea0a54eb.png) <br><br>
+PhyscData 클래스의 생성자는 String name, int height, double vision 이라는 3개의 매개변수를 가지며, <br><br>
+이를 통해 객체가 생성될 때 해당 객체의 name, height, vision 멤버 변수에 값을 할당한다. <br><br><br><br><br>
+
+### 키 평균
+------------------
+![image](https://user-images.githubusercontent.com/114748816/225800613-d287e1b3-e9c8-474b-884d-4516d41bafd5.png) <br><br>
+sum의 값을 0으로 초기화 하고,<br><br>
+i의 값이 dat 배열의 길이 보다 작다면 i값을 증가시켜,<br>
+i의 값이 배열의 길이와 같을때까지 실행시켜 준다. <br><br>
+sum 값에 현재 dat 배열에 있는 키의 값을 더해 누적시켜 준다. <br><br>
+누적된 sum값 ÷ dat 배열의 길이)의 값을 main 매서드로 보내준다. <br><br><br><br><br>
+
+### 시력 분포
+------------------
+![image](https://user-images.githubusercontent.com/114748816/225802488-b7702313-90ee-4d9f-87a8-c6e1bdd31f4f.png) <br><br>
+여기서 VMAX는 최대 시력 값이며, 시력은 0.0부터 VMAX까지의 값으로 표현한다. <br><br>
+시력 값을 0.1 단위로 나누어서 각 범위에 해당하는 인덱스를 구하고, <br><br>
+해당 인덱스에 대응하는 배열 요소(dist[])의 값을 1씩 증가시킨다.	<br><br><br><br><br>
+
+### 출력
+------------------
+![image](https://user-images.githubusercontent.com/114748816/226500449-48d5eff0-05bb-4a32-a430-3a6f0c4114e0.png) <br><br>
+printf() 함수를 이용하여 출력 형식을 지정하고, %s, %d, %f의 서식 지정자를 이용하여 문자열, 정수, 실수 값을 출력해준다. <br><br>
+aveHeight() 함수는 평균 키를 계산하여 반환하는 함수이다. <br><br>
+함수의 인자로 배열 x를 전달하고 있으며, 배열의 각 요소의 키 정보를 더한 후 배열의 길이로 나누어 평균 값을 계산하고 있다. <br><br>
+
