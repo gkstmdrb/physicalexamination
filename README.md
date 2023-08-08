@@ -1,4 +1,4 @@
-# physicalexamination
+# PhysicalExamination
 
 # 평균 키의 값과 시력 분포를 구하는 알고리즘
 <br><br>
